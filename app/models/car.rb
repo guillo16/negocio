@@ -1,3 +1,3 @@
 class Car < ApplicationRecord
-  validates :car, presence: true
+  validates :name, presence: true
 end
