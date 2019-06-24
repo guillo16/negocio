@@ -1,0 +1,7 @@
+ <div class="cards-container">
+  <%= link_to car_path(car) do %>
+   <img src="<%= car.photo1 %>" alt="car photo">
+   <h2><%= car.name %></h2>
+   <p>Amount: <%= humanized_money_with_symbol(car.price) %></p>
+   <% end %>
+ </div>
