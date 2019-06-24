@@ -3,5 +3,6 @@ welcome to show
 <%= @car.name %>
 <p>Amount: <%= humanized_money_with_symbol(@car.price) %></p>
 
-
+<%= button_to 'Add to cart', line_items_path(car_id: @car), class: 'button is-warning add-to-cart' %>
+      </div>
 
