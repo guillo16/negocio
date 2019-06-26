@@ -8,3 +8,30 @@
 
   }
 }
+
+
+.cart-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 200vh;
+}
+.order-checkout {
+ display: block;
+ position: fixed;
+ left: 0px;
+ right: 0px;
+ bottom: 0px;
+ z-index: 7;
+ box-shadow: rgb(229, 229, 229) 0px 1px 0px 0px inset;
+ padding: 16px;
+ background: rgb(255, 255, 255);
+ text-align: center;
+ font-weight: bold;
+ p {
+  width: 90%;
+  background-color: black;
+  border-radius: 6px;
+  padding: 10px 20px;
+ }
+}
+
