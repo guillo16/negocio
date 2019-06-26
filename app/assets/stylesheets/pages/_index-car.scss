@@ -1,0 +1,71 @@
+// car wrapper
+
+.car-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.category {
+  margin-top: 30px;
+  list-style-type:none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: rgb(74, 73, 74);
+  font-size: 14px;
+
+  li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+ul {
+  margin: 0;
+  padding:0;
+  padding-inline-start: 0px;
+  border-bottom: 1px solid lightgrey;
+
+}
+
+@media(max-width: 768px) {
+  .category {
+    margin-top: 30px;
+    list-style-type:none;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+
+    li {
+
+      border: 1px solid lightgrey;
+      padding: 9px;
+      margin: 0;
+      border-bottom: 0px;
+
+    }
+  }
+}
+
+// products
+
+.car-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+
+@media(max-width: 992px) {
+  .car-container {
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+
+@media(max-width: 768px) {
+  .car-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    padding: 2px;
+  }
+}
