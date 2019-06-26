@@ -1,5 +1,21 @@
-<div class="car-container">
-  <% @cars.each do |car| %>
-  <%= render 'shared/cards', car: car %>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1514316703755-dca7d7d9d882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="banner-content">
+    <h1>Shop</h1>
+  </div>
+</div>
+<div class="car-wrapper">
+  <ul class="category">
+    <li>All product</li>
+    <li>Iphones</li>
+    <li>Macbooks</li>
+    <li>Imacs</li>
+    <li>Apple Tv</li>
+  </ul>
+</div>
+<div class="car-wrapper">
+  <div class="car-container">
+    <% @cars.each do |car| %>
+    <%= render 'shared/cards', car: car %>
+    <% end %>
+  </div>
 </div>

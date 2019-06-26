@@ -17,6 +17,16 @@
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
+        <li>
+          <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span><%= cart_count_over_one %></span>
+              <% end %>
+            <% end %>
+        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -29,18 +39,19 @@
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
+        <li>
+          <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span><%= cart_count_over_one %></span>
+              <% end %>
+            <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
 </div>
 
-<% if total_cart_items %>
-              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
-              <span class="icon is-small">
-                <i class="fa fa-shopping-cart"></i>
-              </span>
-              <span>Cart
-                <%= cart_count_over_one %>
-                </span>
-              <% end %>
-            <% end %>
+

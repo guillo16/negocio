@@ -1,7 +1,15 @@
- <div class="cards-container">
+<div class="cards-container">
   <%= link_to car_path(car) do %>
-   <img src="<%= car.photo1 %>" alt="car photo">
+  <img src="<%= car.photo1 %>" alt="car photo">
+  <div class="card-description">
    <h2><%= car.name %></h2>
-   <p>Amount: <%= humanized_money_with_symbol(car.price) %></p>
+   <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <p><%= car.description %>......</p>
+   <h3><%= humanized_money_with_symbol(car.price) %></h3>
    <% end %>
- </div>
+  </div>
+</div>
