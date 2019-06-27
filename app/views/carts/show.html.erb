@@ -1,15 +1,16 @@
 <div class="cart-container">
   <div class="keep-shopping">
     <h2><i class="fas fa-shopping-bag"></i> Shopping Cart</h2>
+    <p><%= link_to 'X', cars_path %></p>
   </div>
   <div class="cart-items">
     <%= render(@cart.line_items) %>
   </div>
 
   <div class="delete-cart">
-   <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %></p>
+   <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button-delete" %></p>
    <p> <span class="total-price">Total:</span> <%= number_to_currency(@cart.total_price) %> </p>
-   <p><%= link_to 'Back to Store', cars_path, class: 'button-shopping' %></p>
+   <p></p>
  </div>
 </div>
 <div class="order-checkout">
