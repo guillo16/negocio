@@ -1,1 +1,32 @@
+.button-shopping {
+  background-color: blue;
+  padding: 10px 30px;
+  font-weight: bold;
+  color: white;
+  border-radius: 6px;
+}
 
+.button-order {
+
+  width: 100%;
+  background-color: rgb(0, 89, 175);
+  color: white;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: red;
+  }
+
+}
+
+.button-delete {
+  background-color: #F4F4F4;
+  padding: 10px;
+  font-size: 15px;
+  color: blue;
+  border-radius: 6px;
+  border-color: #F4F4F4;
+  &:hover {
+    color: grey;
+  }
+}
