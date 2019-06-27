@@ -14,7 +14,10 @@
     <h2><span class="total-price"></span><%= number_to_currency(@cart.total_price) %></h2>
   </div>
   <div class="order-checkout">
-    <p><%= link_to 'GO TO CHECKOUT', cars_path, class: 'button-order' %></p>
+    <p><%= form_tag orders_path do %>
+      <%= hidden_field_tag 'cart_id', @cart.id %>
+      <%= submit_tag 'GO TO CHECKOUT', class: 'button-order' %>
+      <% end %></p>
+    </div>
   </div>
-</div>
 </div>
