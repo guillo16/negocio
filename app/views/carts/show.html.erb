@@ -6,13 +6,15 @@
   <div class="cart-items">
     <%= render(@cart.line_items) %>
   </div>
-
   <div class="delete-cart">
-   <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button-delete" %></p>
-   <p> <span class="total-price">Total:</span> <%= number_to_currency(@cart.total_price) %> </p>
-   <p></p>
- </div>
+    <p><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button-delete" %></p>
+  </div>
+  <div class="price">
+    <h3>Total</h3>
+    <h2><span class="total-price"></span><%= number_to_currency(@cart.total_price) %></h2>
+  </div>
+  <div class="order-checkout">
+    <p><%= link_to 'GO TO CHECKOUT', cars_path, class: 'button-order' %></p>
+  </div>
 </div>
-<div class="order-checkout">
-  <p><%= link_to 'GO TO CHECKOUT', cars_path, class: 'button-order' %></p>
 </div>

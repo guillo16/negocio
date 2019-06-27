@@ -1,3 +1,4 @@
+
 .keep-shopping {
   display: flex;
   justify-content: space-between;
@@ -19,14 +20,15 @@
   }
 }
 
-
 .cart-container {
-  width: 90%;
+  width: 500px;
   margin: 0 auto;
+
 }
 .order-checkout {
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
  p {
 
   width: 90%;
@@ -36,4 +38,37 @@
   padding: 10px 20px;
  }
 }
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    font-size: 25px;
+    color: rgb(74, 73, 74);
+    font-weight: bold;
+  }
+  h3 {
+    color: rgb(74, 73, 74);
+  }
+}
+
+
+
+@media (min-width: 100px)and(max-width: 675px) {
+  .cart-container {
+  width: 90%;
+  margin: 0 auto;
+
+}
+}
+
+
+
+
+
+
+
+
+
+
 
