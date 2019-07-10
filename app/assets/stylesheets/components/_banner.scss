@@ -1,5 +1,5 @@
 .banner {
-  background-size: cover;
+  background-size: center;
   background-position: center;
   height: 300px;
   display: flex;
@@ -28,6 +28,27 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+// home banner
+
+.home-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-banner-button {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-color: white;
+  a {
+    color: white;
     font-weight: bold;
   }
 }
