@@ -1,4 +1,6 @@
 puts 'clering database'
+LineItem.destroy_all
+Cart.destroy_all
 Car.destroy_all
 
 puts 'creating cars'
