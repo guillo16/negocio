@@ -1,0 +1,30 @@
+.purschase-wrapper {
+ width: 100%;
+}
+
+.purschase-container {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+  h1 {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+
+@media(min-width: 100px)and(max-width: 675px) {
+  .purschase-container {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+}

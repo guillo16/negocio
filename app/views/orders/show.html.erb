@@ -1,9 +1,12 @@
 <%= render 'shared/navbar' %>
-<h1>Order</h1>
-<ul>
-  <li>Status: <%= @order.state %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-<ul>
+<div class="purschase-wrapper">
+  <div class="purschase-container">
+    <h1>Thanks For Buying in Cars</h1>
+   <p>Status: <%= @order.state %> <i class="far fa-check-circle"></i></p>
+   <p>Amount: <%= humanized_money_with_symbol(@order.amount) %> <i class="far fa-check-circle"></i></p>
 
+    <p><%= link_to 'X', cars_path %></p>
+    <%= link_to 'Continue Shopping', cars_path, class: "btn btn-primary" %>
 
-<%= link_to 'X', cars_path %>
+  </div>
+</div>
