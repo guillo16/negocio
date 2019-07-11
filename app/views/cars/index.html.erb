@@ -6,11 +6,13 @@
 </div>
 <div class="car-wrapper">
   <ul class="category">
-    <li>All product</li>
-    <li>Iphones</li>
-    <li>Macbooks</li>
-    <li>Imacs</li>
-    <li>Apple Tv</li>
+    <li><%= link_to "All Product", cars_path %></li>
+    <li><%= link_to cars_path(brand: "ferrari") do %>Ferrari<% end %></li>
+    <li><%= link_to cars_path(brand: "lamborgini") do %>Lamborghini<% end %></li>
+    <li><%= link_to cars_path(brand: "aston-martin") do %>Aston Martin<% end %></li>
+    <li><%= link_to cars_path(brand: "porsche") do %>Porsche<% end %></li>
+    <li><%= link_to cars_path(brand: "rolls-royce") do %>Rolls Royce<% end %></li>
+    <li><%= link_to cars_path(price_cents: :desc) do %>Price High to Low<% end %></li>
   </ul>
 </div>
 <div class="car-wrapper">
