@@ -25,19 +25,24 @@
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>
-      <%= button_to 'Add to cart', line_items_path(car_id: @car), class: 'button is-warning add-to-cart' %>
+      <%= button_to 'Add to cart', line_items_path(car_id: @car), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
 </div>
 <div class="container">
   <section id="features">
-    <div class="features-product">
-      <br><br><br><br>
-      <h1> Features </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure recusandae iste molestias vel nostrum, quos error eos harum possimus voluptatum ad voluptatem nemo optio a earum ab commodi eum eius. </p>
-      <img src="<%= @car.photo3 %> " alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure recusandae iste molestias vel nostrum, quos error eos harum possimus voluptatum ad voluptatem nemo optio a earum ab commodi eum eius. </p>
+    <div class="features-title">
+      <h3>Features</h3>
     </div>
-  </section>
+    <div class="features-product">
+      <div class="features-text">
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure recusandae iste molestias vel nostrum, quos error eos harum possimus voluptatum ad voluptatem nemo optio a earum ab commodi eum eius.
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure recusandae iste molestias vel nostrum, quos error eos harum possimus voluptatum ad voluptatem nemo optio a earum ab commodi eum eius. </p>
+     </div>
+     <div class="features-img">
+       <img src="<%= @car.photo3 %> " alt="">
+     </div>
+   </div>
+ </section>
 </div>
