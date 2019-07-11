@@ -4,3 +4,46 @@
   margin: 0 auto;
 
 }
+
+.home-products {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.home-end {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.boxes {
+  background-color: lightgrey;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 100px)and(max-width: 575px) {
+
+  .home-products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-end {
+    display: block;
+  }
+}
+
+
+@media (min-width: 576px)and(max-width: 1050px) {
+
+  .home-products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
