@@ -106,7 +106,7 @@
     width: 100%;
   }
 }
-// Responsiveness
+// Responsivenes
 
 @media (min-width: 100px) and (max-width: 678px) {
   .product-description {
@@ -150,6 +150,17 @@
   .show-image {
     width: 100%;
   }
+  .features-title {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  h3 {
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 35px;
+    color: rgb(74, 73, 74);
+  }
+}
 }
 
 @media(min-width: 1001px)and(max-width: 1025px) {
