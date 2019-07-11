@@ -34,3 +34,51 @@
   display: block;
 }
 }
+
+
+//
+
+#navbar {
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+
+}
+
+.nav-logo {
+  font-size: 25px;
+  color: grey;
+}
+
+.nav-filters {
+  a {
+    color: black;
+
+    font-size: 16px;
+    margin-right: 1px;
+    margin-left: 1px;
+  }
+
+  i {
+    color: black;
+    font-size: 16px;
+  }
+}
+
+.nav-carrito {
+  font-size: 20px;
+  color: grey;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .home-container {
+  padding-top: 80px;
+}
