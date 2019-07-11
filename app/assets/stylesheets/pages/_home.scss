@@ -45,9 +45,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .home-end {
-    display: block;
-  }
+
 }
 
 
@@ -57,3 +55,15 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media (min-width: 100px)and(max-width: 675px) {
+  .home-end {
+    display: block;
+  }
+}
+
+
+
+
+
+
