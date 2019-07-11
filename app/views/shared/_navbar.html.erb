@@ -1,13 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id= "navbar">
   <%= link_to cars_path, class: "navbar-brand" do %>
-  <i class="fas fa-money-bill-alt"></i>
+  <i class="fas fa-car"></i> CARS
   <% end %>
   <div class="nav-cart">
     <div class="cart-item">
       <% if total_cart_items %>
       <%= link_to cart_path(@cart), class: "nav-link" do %>
       <span class="icon is-small">
-        <i class="fa fa-shopping-cart"></i>
+        <i class="fas fa-shopping-bag"></i>
       </span>
       <span><%= cart_count_over_one %></span>
       <% end %>
@@ -28,7 +28,7 @@
         <% if total_cart_items %>
         <%= link_to cart_path(@cart), class: "nav-link" do %>
         <span class="icon is-small">
-          <i class="fa fa-shopping-cart"></i>
+          <i class="fas fa-shopping-bag"></i>
         </span>
         <span><%= cart_count_over_one %></span>
         <% end %>
@@ -45,7 +45,7 @@
         <% if total_cart_items %>
         <%= link_to cart_path(@cart), class: "nav-link" do %>
         <span class="icon is-small">
-          <i class="fa fa-shopping-cart"></i>
+          <i class="fas fa-shopping-bag"></i>
         </span>
         <span><%= cart_count_over_one %></span>
         <% end %>
