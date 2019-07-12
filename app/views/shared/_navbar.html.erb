@@ -22,20 +22,21 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li>
-        <% if total_cart_items %>
-        <%= link_to cart_path(@cart), class: "nav-link" do %>
-        <span class="icon is-small">
-          <i class="fas fa-shopping-bag"></i>
-        </span>
-        <span><%= cart_count_over_one %></span>
-        <% end %>
-        <% end %>
+        <%= link_to "Shop", cars_path, class: "nav-link" %>
       </li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-
+      </li>
+      <li>
+        <div class="cart-shop">
+          <% if total_cart_items %>
+          <%= link_to cart_path(@cart), class: "nav-link" do %>
+          <span class="icon is-small">
+            <i class="fas fa-shopping-bag"></i>
+          </span>
+          <span><%= cart_count_over_one %></span>
+          <% end %>
+          <% end %>
+        </div>
       </li>
       <% else %>
       <li class="nav-item">

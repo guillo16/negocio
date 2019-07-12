@@ -1,24 +1,28 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding: 20px;
+  color: grey;
+
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand  {
+  font-size: 23px;
+  color: grey;
 }
 
-.navbar-lewagon .nav-item {
-  img {
-    width: 30px;
-  }
+.navbar-nav {
+  border-color: white;
 }
+
 
 .nav-buttons {
-  display: flex;
+
 }
 .nav-cart {
    display: flex;
@@ -32,46 +36,19 @@
 @media (min-width: 100px)and(max-width: 575px) {
   .cart-item {
   display: block;
+  a {
+    color: grey;
+  }
+
+}
+.cart-shop {
+  display: none;
 }
 }
 
 
 //
 
-#navbar {
-  overflow: hidden;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-
-}
-
-.nav-logo {
-  font-size: 25px;
-  color: grey;
-}
-
-.nav-filters {
-  a {
-    color: black;
-
-    font-size: 16px;
-    margin-right: 1px;
-    margin-left: 1px;
-  }
-
-  i {
-    color: black;
-    font-size: 16px;
-  }
-}
-
-.nav-carrito {
-  font-size: 20px;
-  color: grey;
-}
 
 .sticky {
   position: fixed;
