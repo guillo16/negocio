@@ -16,17 +16,22 @@
 
   }
 }
-
+// do a horizontal scroll
 .home-products {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  padding: 10px;
+  display: flex;
+  overflow-x: auto;
+
 
 }
 
+.home-products::-webkit-scrollbar {
+  display: none;
+}
+
+
+//home ends
 .home-end {
   width: 90%;
   margin: 0 auto;
@@ -52,22 +57,7 @@
   }
 }
 
-@media (min-width: 100px)and(max-width: 575px) {
 
-  .home-products {
-    grid-template-columns: 1fr 1fr;
-  }
-
-
-}
-
-
-@media (min-width: 576px)and(max-width: 1050px) {
-
-  .home-products {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
 @media (min-width: 100px)and(max-width: 675px) {
   .home-end {
