@@ -61,4 +61,69 @@ h3 {
 }
 }
 
+// homepage cards
 
+.cards-home-container {
+  max-width: 400px;
+  margin: auto;
+  // text-align: center;
+  background-color: #F4F4F4;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  }
+
+  img {
+    width: 100%;
+    min-width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+}
+
+.card-home-description {
+  color: rgb(74, 73, 74);
+  text-align: center;
+  text-decoration: none;
+  a {
+    &:hover {
+      text-decoration: none;
+
+    }
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: rgb(74, 73, 74);
+
+  }
+  i {
+    font-size: 14px;
+    color: #eaa81b;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgb(74, 73, 74);
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(74, 73, 74);
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+    border-color: lightgrey;
+    margin-bottom: 20px;
+  }
+}
