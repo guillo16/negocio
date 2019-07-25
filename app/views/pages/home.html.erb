@@ -1,6 +1,6 @@
 <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="home-banner-button">
-    <a class="btn btn-flat" href="#">Shop Now</a>
+    <%= link_to 'Shop Now', cars_path, class: 'btn btn-flat' %>
   </div>
 </div>
 <%= render "shared/navbar" %>
@@ -10,7 +10,9 @@
   <p> Trusted by the best pilots, cars critics, these are some of our best-selling products. </p>
 </div>
 <div class="home-products">
-  <%= render 'shared/home-products' %>
+  <% @cars.limit(10).each do |car| %>
+  <%= render 'shared/cards', car: car %>
+  <% end  %>
 </div>
 <%= render 'shared/pre-footer' %>
 <script>
