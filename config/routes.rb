@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :line_items
   resources :carts
-  resources :cars
+  resources :cars do
+    resources :reviews, only: [:create]
+  end
   resources :orders, only: [:show, :create] do
     resources :payments, only: [:new, :create]
   end

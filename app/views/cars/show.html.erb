@@ -46,4 +46,14 @@
    </div>
  </section>
 </div>
+<%= render 'reviews/form', car: @car, review: @review %>
+<div id="reviews">
+    <% if @car.reviews.blank? %>
+    Be the first to leave a review for <%= @car.name %>
+    <% else %>
+    <% @car.reviews.reverse_each do |review| %>
+    <%= render 'reviews/show', review: review %>
+    <% end %>
+    <% end %>
+  </div>
 <%= render 'shared/pre-footer' %>
