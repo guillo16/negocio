@@ -138,19 +138,26 @@
 }
 
 @media(max-width: 1000px) {
-  .product-description {
-    padding: 30px;
-    height: auto;
+  .features-product {
+   display: block;
+   .features-text {
+    text-align: center;
   }
-  .show-container {
-    display: block;
-    width: 100%;
-  }
+}
+.product-description {
+  padding: 30px;
+  height: auto;
 
-  .show-image {
-    width: 100%;
-  }
-  .features-title {
+}
+.show-container {
+  display: block;
+  width: 100%;
+}
+
+.show-image {
+  width: 100%;
+}
+.features-title {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 20px;
