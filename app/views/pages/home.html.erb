@@ -10,7 +10,9 @@
   <p> Trusted by the best pilots, cars critics, these are some of our best-selling products. </p>
 </div>
 <div class="home-products">
-  <%= render 'shared/home-products' %>
+  <% @cars.limit(10).each do |car| %>
+  <%= render 'shared/cards', car: car %>
+  <% end  %>
 </div>
 <%= render 'shared/pre-footer' %>
 <script>
