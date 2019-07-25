@@ -66,9 +66,9 @@ ul {
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 766px) {
   .car-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 2px;
     padding: 2px;
   }
