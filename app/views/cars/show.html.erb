@@ -10,11 +10,17 @@
     <h1><%= @car.name %></h1>
     <h3><%= @car.description %></h3>
     <!-- algun borde -->
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+    <div class="review-counter">
+      <%= link_to "#reviews" do%>
+      <% @car.average.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - @car.average).times do %>
+      <i class="far fa-star"></i>
+      <% end %>
+      <%=@car.reviews.size%> Reviews
+      <%end  %>
+    </div>
     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure recusandae iste molestias vel nostrum, quos error eos harum possimus voluptatum ad voluptatem nemo optio a earum ab commodi eum eius. </p>
 
     <%= link_to "See specifications >", "#features", class: "nav-link" %>
@@ -46,7 +52,7 @@
    </div>
  </section>
 </div>
-
-
 <%= render 'shared/pre-footer' %>
-<%= render 'shared/reviews' %>
+<section id="reviews">
+  <%= render 'shared/reviews' %>
+</section>
