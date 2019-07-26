@@ -13,4 +13,9 @@ class Car < ApplicationRecord
       throw :abort
     end
   end
+
+  def average
+    return self.reviews.map { |r| r.rating }.sum / self.reviews.count if self.reviews.count > 0
+    0
+  end
 end
