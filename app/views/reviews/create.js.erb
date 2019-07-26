@@ -9,12 +9,12 @@ function addReview(reviewHTML) {
   const reviewCount = document.getElementById('review-count');
   const newCount = parseInt(reviewCount.innerText) + 1
   reviewCount.innerText = newCount
-}
+};
 
 <% if @review.errors.any? %>
-  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
+  refreshForm('<%= j render "reviews/form", car: @car, review: @review %>');
 <% else %>
   addReview('<%= j render "reviews/show", review: @review %>');
-  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+  refreshForm('<%= j render "reviews/form", car: @car, review: Review.new %>');
 <% end %>
 
