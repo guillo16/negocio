@@ -1,0 +1,35 @@
+<div class="count-review">
+  <h1>Reviews</h1>
+  <h3> <% @car.average.times do %>
+    <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - @car.average).times do %>
+    <i class="far fa-star"></i>
+    <% end %>(<%=@car.reviews.size%>)</h3>
+    <p><button id="myReviewButton" onClick="myReviewFunction();" ><i class="fas fa-edit"></i> Write a review</button></p>
+
+    <% if user_signed_in? %>
+    <div style= "display:none;" id="reviewForm">
+      <%= render 'reviews/form', car: @car, review: @review %>
+      <% else %>
+      <p>You must be log in to create a review</p>
+      <%end  %>
+    </div>
+    <h2>Reviews(<span id="review-count"><%=@car.reviews.size%></span>)</h2>
+  </div>
+  <div id="reviews">
+    <% if @car.reviews.blank? %>
+    Be the first to leave a review for <%= @car.name %>
+    <% else %>
+    <% @car.reviews.reverse_each do |review| %>
+    <%= render 'reviews/show', review: review %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+<script>
+  function myReviewFunction() {
+   var x = document.getElementById("reviewForm");
+   x.style.display = "block";
+ }
+</script>
