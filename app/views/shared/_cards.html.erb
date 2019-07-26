@@ -3,13 +3,14 @@
   <img src="<%= car.photo1 %>" alt="car photo">
   <div class="card-description">
    <h2><%= car.name %></h2>
+   <% car.average.times do %>
    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <p><%= car.description %></p>
+   <% end %>
+   <% (5 - car.average).times do %>
+   <i class="far fa-star"></i>
+   <% end %>
+   <p><%= car.description %></p>
    <h3><%= humanized_money(car.price)%> USD</h3>
    <% end %>
-  </div>
+ </div>
 </div>
