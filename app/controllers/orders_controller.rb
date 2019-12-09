@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
   def show
     @order = current_user.orders.where(state: 'paid').find(params[:id])
   end
@@ -8,5 +9,8 @@ class OrdersController < ApplicationController
     cart = Cart.find(params[:cart_id])
     order = Order.create!(amount: cart.total_price, state: 'pending', user: current_user, cart_id: cart.id)
     redirect_to new_order_payment_path(order)
+  end
+
+  def payment
   end
 end
