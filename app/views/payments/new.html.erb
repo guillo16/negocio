@@ -5,7 +5,8 @@
     <%= form_tag order_payments_path(@order) do %>
     <article>
       <label class="amount">
-        <span><p><i class="fas fa-money-bill"></i> Amount: <%= humanized_money(@order.amount) %> U$D</p></span>
+        <span><p><i class="fas fa-money-bill"></i> Amount: <%= humanized_money(@order.amount) %> U$D</p>
+        </span>
       </label>
     </article>
 
