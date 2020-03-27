@@ -14,10 +14,8 @@ Car.create!(
   photo4:"https://www.diariomotor.com/imagenes/2019/01/lamborghini-huracan-evo-2019-0119-012.jpg",
   category:"luxury",
   brand: "lambo",
-  price: "50000",
+  price: "1",
   description: "BEAST MODE",
-
-
   )
 Car.create!(
   name:"Ferrari",
@@ -28,7 +26,7 @@ Car.create!(
   photo4:"https://i.wheelsage.org/image/format/picture/picture-preview-large/f/ferrari/testarossa/ferrari_testarossa_us-spec_27.jpg",
   category:"exclusive",
   brand:"ferrari",
-  price: "50000",
+  price: "1",
   description: "AGILITY",
 
   )
@@ -41,7 +39,7 @@ Car.create!(
   photo4:"https://i.ytimg.com/vi/E9R3_3czoDI/maxresdefault.jpg",
   category:"supercar",
   brand:"ferrari",
-  price:"200000",
+  price:"1",
   description: "BEAST MODE"
 
   )
@@ -55,7 +53,7 @@ Car.create!(
   photo4:"https://i.pinimg.com/originals/66/19/ae/6619aee0750a216f5044daab2df464bc.jpg",
   category:"supercar",
   brand:"lambo ",
-  price:"100000",
+  price:"1",
   description: "AGILITY MONSTER"
   )
 
@@ -68,7 +66,7 @@ Car.create!(
   photo4:"https://i.wheelsage.org/image/format/picture/picture-preview-large/p/porsche/carrera_gt/porsche_carrera_gt_7.jpg",
   category:"fancy",
   brand:"porsche",
-  price:"20000",
+  price:"1",
   description: "AGILITY MONSTER"
 
   )
@@ -82,7 +80,7 @@ Car.create!(
   photo4:"http://www.newcarcars.com/wp-content/uploads/2019/01/2019-Lamborghini-Urus-Front-Wallpaper5.jpg",
   category:"beast",
   brand:"lambo",
-  price:"400000",
+  price:"1",
   description: "ALL-TERRAIN"
 
   )
@@ -95,7 +93,7 @@ Car.create!(
   photo4:"http://cdn.astonmartin.com/sitefinity/accessories/dbsinterior.jpg?sfvrsn=0",
   category:"beast",
   brand:"aston",
-  price:"25000",
+  price:"1",
   description: "STYLE GLAM"
 
   )
@@ -108,7 +106,7 @@ Car.create!(
   photo4:"http://cdn.astonmartin.com/sitefinity/accessories/v12-vantage.jpg?sfvrsn=4",
   category:"beast",
   brand:"aston",
-  price:"340200",
+  price:"1",
   description: "ENGLISH GLAMOUR"
   )
 # Car.create!(
