@@ -1,23 +1,15 @@
 <%= render 'shared/navbar' %>
-<div class="purschase-wrapper">
-  <div class="purschase-container">
-    <h1>1.Payment</h1>z
-    <%= form_tag order_payments_path(@order) do %>
-    <article>
-      <label class="amount">
-        <span><p><i class="fas fa-money-bill"></i> Amount: <%= humanized_money(@order.amount) %> U$D</p>
-        </span>
-      </label>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Cars"
-    data-email="<%= current_user.email %>"
-    data-description="Car"
-    data-amount="<%= @order.amount_cents %>"
-    data-currency="<%= @order.amount.currency %>"></script>
-
-    <% end %>
+<div class="container">
+  <div class="payment-order">
+    <form action="/procesar-pago" method="POST">
+      <%= hidden_field_tag :authenticity_token %>
+      <input type="hidden" name='order_id' value=<%= @order.id %>>
+      <p>Precio: <%= humanized_money_with_symbol(@order.amount) %></p>
+      <script
+      src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+      data-public-key="TEST-1f6e5430-3a71-4285-91ea-f29959551977"
+      data-transaction-amount="<%= @order.amount %>">
+      </script>
+    </form>
   </div>
 </div>
