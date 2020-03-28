@@ -2,14 +2,13 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @orders = Order.sum('amount_cents') * 0.01
+    @order = Order.sum('amount_cents') * 0.01
+    @orders = Order.all
   end
 
   def show
     @order = current_user.orders.where(state: 'Encargado').find(params[:id])
   end
-
-
 
   def create
     cart = Cart.find(params[:cart_id])
