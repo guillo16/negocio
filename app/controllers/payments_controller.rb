@@ -9,14 +9,13 @@ class PaymentsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @cart.destroy
     session[:cart_id] = nil
-
-    @order.update(state: 'paid')
+    @order.update(state: 'Encargado')
     redirect_to order_path(@order)
   end
 
   private
 
   def set_order
-    @order = current_user.orders.where(state: 'pending').find(params[:order_id])
+    @order = current_user.orders.where(state: 'Pendientes').find(params[:order_id])
   end
 end

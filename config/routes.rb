@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :cars do
     resources :reviews, only: [:create]
   end
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: [:index, :show, :create, :total] do
     resources :payments, only: [:new, :create]
   end
 

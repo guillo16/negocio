@@ -19,5 +19,4 @@ class Car < ApplicationRecord
     end
   end
 
-
 end
