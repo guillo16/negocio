@@ -4,7 +4,10 @@
   <%= order.amount %>
   <%= order.created_at.strftime('%D %M %Y') %>
   <% order.cart.line_items.each do |line_item| %>
-  <%= line_item.car.name %>
+  <h3><%= line_item.car.name %></h3>
+  <% line_item.car.variants.each do |variant| %>
+  <%= variant.size_name %>
+  <% end %>
   <% end %>
   <% end%>
   <h1>total:</h1>

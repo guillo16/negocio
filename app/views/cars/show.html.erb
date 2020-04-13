@@ -31,7 +31,20 @@
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>
-      <%= button_to 'Add to cart', line_items_path(car_id: @car), class: 'btn btn-primary' %>
+
+
+
+      <%= form_tag line_items_path do %>
+      <%= hidden_field_tag 'car_id', @car.id %>
+      <% @car.variants.each do |variant| %>
+      <label>
+        <input type="radio" name="variant_id" value="<%= variant.id %>" /><%= variant.size_name %>
+      </label>
+      <% end %>
+      <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
+      <% end %>
+
+
     </div>
   </div>
 </div>
