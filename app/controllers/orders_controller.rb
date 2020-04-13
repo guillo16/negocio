@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def create
     cart = Cart.find(params[:cart_id])
-    order = Order.create!(amount: cart.total_price, state: 'Pendientes', user: current_user, cart_id: cart.id)
+    order = Order.create!(amount: cart.total_price, state: 'Pendientes', user: current_user, cart: cart)
     redirect_to new_order_payment_path(order)
   end
 end
