@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :create, :total] do
     resources :payments, only: [:new, :create]
   end
-  resources :variants, only: [:new, :create]
 
+  resources :cars do
+    resources :variants, only: [:new, :create]
+  end
+  resources :variants, only: :destroy
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

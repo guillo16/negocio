@@ -8,10 +8,16 @@ class VariantsController < ApplicationController
     @variant = Variant.new(variant_params)
     @variant.car = @car
     if @variant.save
-      redirect_to cars_path
+      redirect_to car_path(@car)
     else
-      render :new
+      render 'cars/show'
     end
+  end
+
+  def destroy
+    @variant = Variant.find(params[:id])
+    @variant.destroy
+    redirect_to cars_path
   end
 
   private

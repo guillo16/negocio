@@ -28,6 +28,14 @@
     <h4> Style</h4>
     <img src="<%= @car.photo1 %>" alt="" style=" width: 150px;">
     <h3></h3>
+
+    <%= render 'variants/new' %>
+    <% @car.variants.each do |variant| %>
+    <h2><%= variant.size_name %></h2>
+    <%= link_to "Delete", variant, method: :delete %>
+
+
+    <% end %>
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>

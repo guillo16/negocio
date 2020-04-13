@@ -1,0 +1,7 @@
+<%= simple_form_for([@car, @variant ]) do |f| %>
+<%= f.input :size_name, collection: ["XS", "S", "L", "XL", "38", "39", "40"], :selected => "XS" %>
+<%= f.submit %>
+<% end %>
+
+
+
