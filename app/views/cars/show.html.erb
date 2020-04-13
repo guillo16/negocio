@@ -30,17 +30,20 @@
     <h3></h3>
 
     <%= render 'variants/new' %>
+
+
+
     <% @car.variants.each do |variant| %>
-    <h2><%= variant.size_name %></h2>
-    <%= link_to "Delete", variant, method: :delete %>
-
-
+    <p><%= variant.size_name %></p>
+    <p><%= variant.stock %></p>
     <% end %>
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>
 
 
+
+<!-- form para comprar muy complejo   -->
 
       <%= form_tag line_items_path do %>
       <%= hidden_field_tag 'car_id', @car.id %>
@@ -50,13 +53,26 @@
 
       <% else %>
       <div class="label-guillo">
+        <% if variant.stock == 0 %>
+
+        <% else %>
         <label>
           <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.size_name %>
         </label>
         <% end %>
+        <% end %>
       </div>
       <% end %>
-      <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
+      <%= juan = @car.variants.sum(:stock) %>
+
+
+      <% if juan >= 1 %>
+        <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
+      <% else %>
+      no podes comprar
+      <% end %>
+
+
       <% end %>
     </div>
   </div>

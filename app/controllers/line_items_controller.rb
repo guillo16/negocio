@@ -28,6 +28,7 @@ class LineItemsController < ApplicationController
   def create
     car = Car.find(params[:car_id])
     variant = Variant.find(params[:variant_id])
+    variant.decrement!(:stock)
     @line_item = @cart.add_car(car, variant)
     if @line_item.save
       redirect_to @line_item.cart, notice: 'Item added to cart.'
@@ -54,6 +55,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @cart = Cart.find(session[:cart_id])
+    @line_item.variant.increment!(:stock)
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to cart_path(@cart), notice: 'Item successfully removed.' }

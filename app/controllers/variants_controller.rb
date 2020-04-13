@@ -1,8 +1,4 @@
 class VariantsController < ApplicationController
-  def new
-
-  end
-
   def create
     @car = Car.find(params[:car_id])
     @variant = Variant.new(variant_params)
@@ -23,6 +19,6 @@ class VariantsController < ApplicationController
   private
 
   def variant_params
-    params.require(:variant).permit(:size_name)
+    params.require(:variant).permit(:size_name, :stock)
   end
 end
