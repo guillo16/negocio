@@ -27,16 +27,12 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     car = Car.find(params[:car_id])
-    @line_item = @cart.add_car(car)
-
-    respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Item added to cart.' }
-        format.json { render :show, status: :created, location: @line_item }
-      else
-        format.html { render :new }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+    variant = Variant.find(params[:variant_id])
+    @line_item = @cart.add_car(car, variant)
+    if @line_item.save
+      redirect_to @line_item.cart, notice: 'Item added to cart.'
+    else
+      render 'car/show'
     end
   end
 
@@ -73,6 +69,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:car_id)
+      params.require(:line_item).permit(:car_id, :variant_id)
     end
-end
+  end

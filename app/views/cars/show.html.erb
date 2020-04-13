@@ -28,10 +28,36 @@
     <h4> Style</h4>
     <img src="<%= @car.photo1 %>" alt="" style=" width: 150px;">
     <h3></h3>
+
+    <%= render 'variants/new' %>
+    <% @car.variants.each do |variant| %>
+    <h2><%= variant.size_name %></h2>
+    <%= link_to "Delete", variant, method: :delete %>
+
+
+    <% end %>
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>
-      <%= button_to 'Add to cart', line_items_path(car_id: @car), class: 'btn btn-primary' %>
+
+
+
+      <%= form_tag line_items_path do %>
+      <%= hidden_field_tag 'car_id', @car.id %>
+      <% @car.variants.each do |variant| %>
+      <% if variant.size_name == 'unico' %>
+      <%= hidden_field_tag 'variant_id', variant.id %>
+
+      <% else %>
+      <div class="label-guillo">
+        <label>
+          <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.size_name %>
+        </label>
+        <% end %>
+      </div>
+      <% end %>
+      <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -56,3 +82,10 @@
 <section id="new-reviews">
   <%= render 'shared/reviews' %>
 </section>
+
+
+<style>
+  .label-guillo {
+    display: flex;
+  }
+</style>

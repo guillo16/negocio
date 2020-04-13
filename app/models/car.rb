@@ -3,6 +3,9 @@ class Car < ApplicationRecord
   monetize :price_cents
   has_many :line_items, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :variants, dependent: :destroy
+  accepts_nested_attributes_for :variants
+
   validates :name, presence: true
 
   def average
