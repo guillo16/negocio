@@ -55,6 +55,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @cart = Cart.find(session[:cart_id])
+    @line_item.variant.increment!(:stock)
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to cart_path(@cart), notice: 'Item successfully removed.' }

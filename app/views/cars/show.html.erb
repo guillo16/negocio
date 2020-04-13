@@ -30,14 +30,18 @@
     <h3></h3>
 
     <%= render 'variants/new' %>
+
+
+
     <% @car.variants.each do |variant| %>
+    <p><%= variant.size_name %></p>
     <p><%= variant.stock %></p>
-    <h2><%= variant.size_name %></h2>
-    <%= link_to "Delete", variant, method: :delete %>
     <% end %>
     <!-- algun borde -->
     <div class="product-buy">
       <h4><%= humanized_money_with_symbol(@car.price) %></h4>
+
+
 
 <!-- form para comprar muy complejo   -->
 
@@ -59,9 +63,10 @@
         <% end %>
       </div>
       <% end %>
-      <%= @car.variants.count %>
+      <%= juan = @car.variants.sum(:stock) %>
 
-      <% if @car.variants.count >= 1 %>
+
+      <% if juan >= 1 %>
         <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
       <% else %>
       no podes comprar
