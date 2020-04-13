@@ -27,7 +27,8 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     car = Car.find(params[:car_id])
-    @line_item = @cart.add_car(car)
+    variant = Variant.find(params[:variant_id])
+    @line_item = @cart.add_car(car, variant)
 
     respond_to do |format|
       if @line_item.save

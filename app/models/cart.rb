@@ -1,8 +1,8 @@
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_one :order
-  def add_car(car)
-    current_item = line_items.find_by(car_id: car.id)
+  def add_car(car, variant)
+    current_item = line_items.find_by(car_id: car.id, variant_id: variant.id)
 
     if current_item
       current_item.increment(:quantity)
@@ -15,5 +15,4 @@ class Cart < ApplicationRecord
   def total_price
     line_items.to_a.sum { |item| item.total_price }
   end
-
 end
