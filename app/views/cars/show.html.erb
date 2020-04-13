@@ -41,16 +41,15 @@
       <%= hidden_field_tag 'variant_id', variant.id %>
 
       <% else %>
-      <label>
-        <input type="radio" name="variant_id" value="<%= variant.id %>" /><%= variant.size_name %>
-      </label>
-      <% end %>
-
+      <div class="label-guillo">
+        <label>
+          <input type="radio" name="variant_id" value="<%= variant.id %>" checked /><%= variant.size_name %>
+        </label>
+        <% end %>
+      </div>
       <% end %>
       <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
       <% end %>
-
-
     </div>
   </div>
 </div>
@@ -75,3 +74,10 @@
 <section id="new-reviews">
   <%= render 'shared/reviews' %>
 </section>
+
+
+<style>
+  .label-guillo {
+    display: flex;
+  }
+</style>
