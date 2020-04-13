@@ -37,9 +37,15 @@
       <%= form_tag line_items_path do %>
       <%= hidden_field_tag 'car_id', @car.id %>
       <% @car.variants.each do |variant| %>
+      <% if variant.size_name == 'unico' %>
+      <%= hidden_field_tag 'variant_id', variant.id %>
+
+      <% else %>
       <label>
         <input type="radio" name="variant_id" value="<%= variant.id %>" /><%= variant.size_name %>
       </label>
+      <% end %>
+
       <% end %>
       <%= submit_tag 'add to cart', class: 'btn btn-primary' %>
       <% end %>

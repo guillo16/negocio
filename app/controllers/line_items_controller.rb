@@ -29,7 +29,6 @@ class LineItemsController < ApplicationController
     car = Car.find(params[:car_id])
     variant = Variant.find(params[:variant_id])
     @line_item = @cart.add_car(car, variant)
-
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to @line_item.cart, notice: 'Item added to cart.' }

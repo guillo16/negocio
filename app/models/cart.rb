@@ -2,12 +2,12 @@ class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_one :order
   def add_car(car, variant)
-    current_item = line_items.find_by(car_id: car.id, variants_id: variant.id)
+    current_item = line_items.find_by(car_id: car.id, variant_id: variant.id)
 
     if current_item
       current_item.increment(:quantity)
     else
-      current_item = line_items.build(car_id: car.id)
+      current_item = line_items.build(car_id: car.id, variant_id: variant.id)
     end
     current_item
   end
