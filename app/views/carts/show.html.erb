@@ -16,9 +16,10 @@
   </div>
   <div class="order-checkout">
     <%= form_tag orders_path do %>
-      <%= hidden_field_tag 'cart_id', @cart.id %>
-      <%= submit_tag 'GO TO CHECKOUT', class: 'button-order' %>
-      <% end %>
-    </div>
+    <%= hidden_field_tag 'line_item_id', @line_items %>
+    <%= hidden_field_tag 'cart_id', @cart.id %>
+    <%= submit_tag 'GO TO CHECKOUT', class: 'button-order' %>
+    <% end %>
   </div>
+</div>
 </div>
