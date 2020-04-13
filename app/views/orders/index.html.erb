@@ -5,6 +5,7 @@
   <%= order.created_at.strftime('%D %M %Y') %>
   <% order.cart.line_items.each do |line_item| %>
   <h3><%= line_item.car.name %></h3>
+  <br><br><br>
   <%= line_item.variant.size_name %>
   <% end %>
   <% end%>
