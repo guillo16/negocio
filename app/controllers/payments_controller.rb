@@ -7,7 +7,6 @@ class PaymentsController < ApplicationController
   def create
     # DESTROY CART
     @cart = Cart.find(session[:cart_id])
-    @cart.destroy
     session[:cart_id] = nil
     @order.update(state: 'Encargado')
     redirect_to order_path(@order)
